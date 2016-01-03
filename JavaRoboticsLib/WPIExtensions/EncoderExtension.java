@@ -13,7 +13,7 @@ public class EncoderExtension
     * 
     *  @param countPerRevolution Counts per revolution of the encoder. Usually 360 or 256.
     */
-    public static void setDistancePerPulse(Encoder e, double wheelDiameter, int countPerRevolution) throws Exception {
+    public static void setDistancePerPulse(Encoder e, double wheelDiameter, int countPerRevolution) {
         e.setDistancePerPulse((Math.PI * wheelDiameter) / countPerRevolution);
     }
 
