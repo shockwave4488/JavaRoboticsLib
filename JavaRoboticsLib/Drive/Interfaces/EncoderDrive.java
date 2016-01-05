@@ -25,7 +25,7 @@ public interface EncoderDrive extends TankDrive {
 		double direction = getEncoders().getLinearDistance() < location ? -1 : 1;
 		
 		while((getEncoders().getLinearDistance() - location)*direction > 0){
-			setPowers(power, power);
+			setPowers(power * direction, power * direction);
 			accurateWaitSeconds(interval);
 		}
 		
