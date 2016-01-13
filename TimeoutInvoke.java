@@ -3,8 +3,8 @@ import java.lang.Thread;
 
 public class TimeoutInvoke {
 	
-	public interface Func<Treturn, Targ> {
-		Treturn run(Targ arg);
+	public interface Func {
+		Object run(Object arg);
 	}
 	
 	public static boolean TryExecute(Runnable expression, long timeoutMs) throws InterruptedException{
@@ -21,8 +21,7 @@ public class TimeoutInvoke {
 	}
 	
 	public static Object TryExecute(Func expression, Object param, long timeoutMs) throws InterruptedException{
-		//java pls
-		Object[] toReturn = new Object[0];
+		Object[] toReturn = new Object[1];
 		Runnable r = new Runnable() {
 			@Override
 			public void run(){
