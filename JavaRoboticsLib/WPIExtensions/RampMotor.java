@@ -141,6 +141,14 @@ public class RampMotor implements SpeedController
     public void pidWrite(double value) {
         set(value);
     }
+    
+    public void setInverted(boolean value){
+    	m_controller.setInverted(value);
+    }
+    
+    public boolean getInverted(){
+    	return m_controller.getInverted();
+    }
 }
 
 

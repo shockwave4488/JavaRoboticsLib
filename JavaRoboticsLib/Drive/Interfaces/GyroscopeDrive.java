@@ -2,7 +2,7 @@ package JavaRoboticsLib.Drive.Interfaces;
 
 import edu.wpi.first.wpilibj.Timer;
 import JavaRoboticsLib.ControlSystems.MotionController;
-import edu.wpi.first.wpilibj.Gyro; //Change to Gyro Interface or GyroBase when new WPI comes out
+import edu.wpi.first.wpilibj.GyroBase; //Change to Gyro Interface or GyroBase when new WPI comes out
 import static JavaRoboticsLib.Utility.Util.accurateWaitSeconds;
 
 public interface GyroscopeDrive extends TankDrive {
@@ -12,10 +12,10 @@ public interface GyroscopeDrive extends TankDrive {
 	}
 	
 	public interface DynamicGyroscopeDelegate{
-		public boolean drive(Gyro gyro); //Change to Gyro Interface or GyroBase when new WPI comes out
+		public boolean drive(GyroBase gyro); //Change to Gyro Interface or GyroBase when new WPI comes out
 	}
 	
-	public Gyro getGyroscope();
+	public GyroBase getGyroscope();
 	
 	public default void turnToAngle(double power, double angle, boolean brake, double interval) throws InterruptedException{
 		int direction = getGyroscope().getAngle() < angle ? -1 : 1;

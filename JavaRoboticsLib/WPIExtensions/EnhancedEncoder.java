@@ -13,7 +13,7 @@ public class EnhancedEncoder extends Encoder
     * Delta-time value to determine velocity. Set negative to determine dt automatically.
     */
     public void setDt(double value) {
-        m_velocityFilter.Dt = value;
+        m_velocityFilter.setDt(value);
     }
 
     /**
@@ -33,15 +33,15 @@ public class EnhancedEncoder extends Encoder
     *  @return Derivative of the distance
     */
     public double getRate() {
-        return m_velocityFilter.Get(GetDistance());
+        return m_velocityFilter.get(getDistance());
     }
 
     /**
     * Resets the encoder and derivative
     */
     public void reset() {
-        super.Reset();
-        m_velocityFilter.ReInitialize();
+        super.reset();
+        m_velocityFilter.reInitialize();
     }
 
 }

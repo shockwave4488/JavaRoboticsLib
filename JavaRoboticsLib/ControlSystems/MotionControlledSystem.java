@@ -2,6 +2,7 @@ package JavaRoboticsLib.ControlSystems;
 
 import edu.wpi.first.wpilibj.PIDSource;
 import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.Notifier;
 
 /**
 * Extendible controller for a {@link #MotionController} Controlled mechanism.
@@ -14,7 +15,7 @@ public abstract class MotionControlledSystem
     /**
     * Notifier to update the {@link #MotionControlledSystem} periodically
     */
-    //protected Notifier Periodic;
+    protected Notifier periodic;
     
     /**
     * The {@link #MotionController} for the system to follow
@@ -82,12 +83,12 @@ public abstract class MotionControlledSystem
 
     public void Start(double period)
     {
-        //Periodic.StartPeriodic(period);
+        periodic.startPeriodic(period);
     }
 
     public void Stop()
     {
-        //Periodic.Stop();
+        periodic.stop();
     }
 
 }
